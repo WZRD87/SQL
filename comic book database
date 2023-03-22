@@ -1,0 +1,40 @@
+Create a comicbook store database
+
+
+CREATE TABLE comicbookstore (id INTEGER PRIMARY KEY,book TEXT, price INTEGER, aisle INTEGER, label TEXT);
+
+INSERT INTO comicbookstore VALUES (1,"Amazing Spiderman",500,1,"Marvel");
+INSERT INTO comicbookstore VALUES (2, "The Dark Knight",300,2,"DC");
+INSERT INTO comicbookstore VALUES (3, "Fantastic Four", 200, 1,"Marvel");
+INSERT INTO comicbookstore VALUES (4, "Savage Dragon", 25,3, "Image");
+INSERT INTO comicbookstore VALUES (5, "Silver Surfer", 50, 2, "Marvel");
+INSERT INTO comicbookstore VALUES (6, "Man of Steel", 65,5, "DC");
+INSERT INTO comicbookstore VALUES (7, "LEX Luthor",30,5, "DC");
+INSERT INTO comicbookstore VALUES (8, "Iron Man", 65,1, "Marvel");
+INSERT INTO comicbookstore VALUES (9, "Captain America",75,5, "Marvel");
+INSERT INTO comicbookstore VALUES (10, "Human Torch",15,1, "Marvel");
+INSERT INTO comicbookstore VALUES (11, "The Vulture",20,6, "Marvel");
+INSERT INTO comicbookstore VALUES (12, "Domino",10,2,"Marvel");
+INSERT INTO comicbookstore VALUES (13, "Deadpool",250,1,"Marvel");
+INSERT INTO comicbookstore VALUES (14, "GreenLantern",45,2,"DC");
+INSERT INTO comicbookstore VALUES (15, "LOBO",12,3, "Image");
+
+--display the database ordered by price.
+SELECT * FROM comicbookstore ORDER BY PRICE
+
+--what is the avg price of items in the Marvel section?
+SELECT AVG(price) "avg Marvel"
+FROM comicbookstore
+where section='Marvel'; 
+
+--what are the most 5 popular labels? 
+SELECT item, price, label 
+FROM store
+order by label desc
+limit 5; 
+
+
+
+
+
+
